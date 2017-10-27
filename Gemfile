@@ -33,6 +33,8 @@ gem 'haml-rails'
 gem 'flexbox_rb'
 gem 'devise',github: 'plataformatec/devise'
 gem 'omniauth-facebook'
+#Annotate
+gem 'annotate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
