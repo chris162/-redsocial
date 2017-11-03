@@ -11,5 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require best_in_place
+//= require best_in_place.jquery-ui
 //= require turbolinks
 //= require_tree .

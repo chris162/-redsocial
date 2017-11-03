@@ -21,6 +21,14 @@
 #  provider               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
+#  cover_file_name        :string
+#  cover_content_type     :string
+#  cover_file_size        :integer
+#  cover_updated_at       :datetime
 #
 
 class User < ApplicationRecord
@@ -34,6 +42,13 @@ class User < ApplicationRecord
  validate :validate_user_name_regex
 
  has_many :posts
+
+  has_attached_file :avatar,styles: {thumb: "100x100",medium:"300x300"},default_url:"/images/:style/eli.jpg" 
+  validates_attachment_content_type :avatar,content_type: /\Aimage\/.*\Z/
+
+  has_attached_file :cover,styles: {thumb: "400x300",medium:"800x600"},default_url:"/images/:style/missin_cover.jpg" 
+  validates_attachment_content_type :cover,content_type: /\Aimage\/.*\Z/
+
 
          def self.from_omniauth(auth)
     where(provider: auth[:provider], uid:auth[:uid]).first_or_create do |user|

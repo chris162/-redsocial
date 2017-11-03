@@ -35,6 +35,9 @@ gem 'devise',github: 'plataformatec/devise'
 gem 'omniauth-facebook'
 #Annotate
 gem 'annotate'
+gem 'best_in_place', '~> 3.0.1'
+gem "paperclip", "~> 5.0.0"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
